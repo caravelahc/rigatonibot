@@ -1,3 +1,22 @@
+import click
+from pathlib import Path
+import requests
+
+@click.command()
+@click.argument('filename', type=click.Path(exists=True, readable=True), nargs=1)
+def main(filename):
+    path = Path(filename).as_posix()
+
+    with open(path, 'r') as file:
+        data = file.read()
+        web_address = requests.post('http://paste.rs', data=data)
+
+    print(web_address.text)
+
+if __name__ == '__main__':
+    main()
+
+
 # Ta esse eh o unico arquivo que soh eu tenho por enquanto:
 """
 Ideias:
