@@ -4,7 +4,7 @@ import requests
 
 @click.command()
 @click.argument('filename', type=click.Path(exists=True, readable=True), nargs=1)
-def main(filename):
+def cli(filename):
     """Usage:
     run `python rigatonibot/cli.py <file>`, 
     it will create and output via terminal your `paste.rs` link"""
@@ -17,7 +17,7 @@ def main(filename):
     print(web_address.text)
 
 if __name__ == '__main__':
-    main()
+    cli()
 
 
 # Ta esse eh o unico arquivo que soh eu tenho por enquanto:
