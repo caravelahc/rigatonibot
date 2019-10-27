@@ -5,6 +5,9 @@ import requests
 @click.command()
 @click.argument('filename', type=click.Path(exists=True, readable=True), nargs=1)
 def main(filename):
+    """Usage:
+    run `python rigatonibot/cli.py <file>`, 
+    it will create and output via terminal your `paste.rs` link"""
     path = Path(filename).as_posix()
 
     with open(path, 'r') as file:
