@@ -4,7 +4,8 @@ setup(
     name='rigatonibot',
     version='1.0.0',
     packages=find_packages(),
-    install_requires=['python-telegram-bot', 'requests'],
+    install_requires=['python-telegram-bot', 'requests', 'click',
+                        'pathlib'],
     entry_points='''
         [console_scripts]
         rigatonibot=rigatonibot.__main__:main
